@@ -1,0 +1,672 @@
+.placer-container {
+  padding: 0;
+  width: 29.8vw;
+  height: 29.8vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ship-placer {
+  text-align: center;
+  font-size: 0.8vw;
+  color: rgb(172, 172, 172);
+  width: 100%;
+  height: 17%;
+}
+
+.ship-placer-title {
+  color: white;
+  font-size: 1vw;
+  margin-bottom: 10px;
+  text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.8);
+}
+
+.ship-coords {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ship-coords label {
+  text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.8);
+}
+
+.ship-placer input {
+  font-family: "Noto Sans JP", Calibri;
+  text-align: center;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgb(172, 172, 172);
+  color: rgb(172, 172, 172);
+  font-size: 1.1vw;
+  background-color: transparent;
+  width: 30px;
+}
+
+.ship-button {
+  color: rgb(172, 172, 172);
+  font-size: 0.8vw;
+  width: 100px;
+  height: 27px;
+  background-color: transparent;
+  border: 2px solid rgb(172, 172, 172);
+  border-radius: 20px;
+  box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.8);
+}
+
+.ship-button:hover {
+  cursor: pointer;
+  box-shadow: inset 0px 0px 8px 3px rgb(172, 172, 172);
+}
+
+.ship-button:active {
+  transform: translateY(8%);
+}
+
+.ship-button-clicked {
+  box-shadow: inset 0px 0px 8px 3px rgb(172, 172, 172);
+}
+
+.ship-submit {
+  color: white;
+  border: 2px solid rgb(13, 223, 195);
+  border-radius: 20px;
+  box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.8);
+}
+
+.ship-submit:hover {
+  cursor: pointer;
+  box-shadow: inset 0px 0px 8px 3px rgb(13, 223, 195);
+}
+
+.ship-message {
+  font-size: 1vw;
+  margin-top: 10px;
+}
+
+.start-game-button {
+  height: 30px;
+  width: 100%;
+}
+
+.fade-in {
+  animation: fade-in 1s ease-in-out both;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.results-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 6px 7px 10px 2px rgba(0, 0, 0, 0.8);
+  width: 60%;
+  height: 80%;
+  padding: 50px 80px;
+  border: 2px solid rgb(13, 223, 195);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.results-title {
+  color: white;
+  font-family: "Noto Sans JP", Calibri;
+  font-size: 2vw;
+  text-shadow: 0px 5px 3px rgba(0, 0, 0, 0.8);
+  margin-bottom: 60px;
+}
+
+.accuracy-container {
+  white-space: pre-line;
+  display: flex;
+  width: 80%;
+  height: 8vw;
+}
+
+.shots-container,
+.shots-counter-container,
+.accuracy-text,
+.accuracy-counter {
+  width: 25%;
+  height: 100%;
+  color: white;
+  font-size: 1.3vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+}
+
+.shots-container div,
+.shots-counter-container div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 30%;
+}
+
+.total-shots-counter,
+.shots-target-counter,
+.accuracy-counter {
+  padding-left: 20px;
+}
+
+.separator {
+  width: 2px;
+  background-color: rgb(13, 223, 195);
+  animation: separator 1s ease-out both;
+}
+
+@keyframes separator {
+  0% {
+    height: 0%;
+  }
+
+  100% {
+    height: 100%;
+  }
+}
+
+.accuracy-text {
+  box-sizing: border-box;
+  text-align: right;
+}
+
+.accuracy-counter {
+  width: 23%;
+  text-align: center;
+}
+
+.ships-main-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 70px;
+}
+
+.ships-title {
+  text-align: center;
+  font-size: 1.5vw;
+  color: white;
+}
+
+.ships-img-container {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ship-mini-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+
+.ship-img {
+  scale: 0.8;
+}
+
+.ship-img:last-of-type {
+  margin: 0 30px;
+}
+
+.results-point {
+  align-self: flex-end;
+}
+
+.buttons-container {
+  margin-top: 80px;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+
+* {
+  margin: 0;
+}
+
+.welcome-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  background-image: url(../assets/ui.gif);
+  background-position: top;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.welcome-box,
+.popup-box {
+  width: 750px;
+  color: white;
+  padding: 45px 0;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(25px);
+  border: 2px solid rgb(13, 223, 195);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup-box {
+  padding: 45px;
+  line-height: 1.8;
+  position: absolute;
+  left: 29%;
+  text-align: center;
+}
+
+.winner-box {
+  transform: translateY(-10%);
+}
+
+.winner-title {
+  margin-bottom: 25px;
+}
+
+.scale-up {
+  animation: scale-up-center 0.6s ease-out forwards;
+}
+
+@keyframes scale-up-center {
+  0% {
+    transform: scale(0.1);
+  }
+
+  100% {
+    transform: scale(1) translateY(-10%);
+  }
+}
+
+.welcome-title,
+.popup-title {
+  font-size: 3rem;
+}
+
+.welcome-text,
+.popup-text {
+  font-size: 1.4rem;
+  margin: 25px 0;
+}
+
+.popup-text {
+  font-size: 1.2rem;
+  margin: 20px 0 50px 0;
+}
+
+.name-input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid gray;
+  background-color: transparent;
+  width: 300px;
+  height: 30px;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.name-input::placeholder {
+  font-family: "Noto Sans JP", Calibri;
+  font-size: 1.2rem;
+}
+
+.start-button {
+  color: white;
+  font-size: 16px;
+  width: 170px;
+  height: 45px;
+  background-color: transparent;
+  border: 2px solid rgb(13, 223, 195);
+  border-radius: 23px;
+}
+
+.start-button:hover {
+  cursor: pointer;
+  box-shadow: inset 0px 0px 9px 2px rgb(13, 223, 195);
+}
+
+.start-button:active {
+  transform: translateY(8%);
+}
+
+.loader-container {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+.loader {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background-image: url(./assets/loader.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#root {
+  height: 100%;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: "Noto Sans JP", Calibri;
+  background-color: black;
+}
+
+.main-container {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(rgb(50, 50, 50), black);
+}
+
+.fade-in {
+  animation: fade-in 1s ease-in-out both;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* -------------------------------------------------------------- */
+.player-board,
+.enemy-board {
+  display: grid;
+  grid-template-columns: repeat(11, auto);
+  max-width: 50%;
+  width: 29.8vw;
+  aspect-ratio: 1/1;
+}
+
+.square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(172, 172, 172);
+  box-shadow: 4px 7px 5px rgba(0, 0, 0, 0.8) inset;
+}
+
+.square:hover {
+  box-shadow: inset 0px 0px 12px 3px rgb(172, 172, 172);
+}
+
+.player-ship {
+  box-shadow: inset 0px 0px 12px 3px rgb(172, 172, 172);
+  color: rgb(172, 172, 172);
+  font-size: 1.5vw;
+}
+
+.enemy-square {
+  cursor: url("./assets/crosshair.svg") 25 25, crosshair;
+}
+
+.grid-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.68vw;
+  width: 2.66vw;
+  color: rgb(172, 172, 172);
+  font-size: 1vw;
+  text-shadow: 0px 5px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* -------------------------------------------------------------- */
+.sidebar {
+  width: 16%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(25px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.player-sidebar {
+  border-right: 2px solid rgb(13, 223, 195);
+  box-shadow: 6px 0px 20px 7px rgba(0, 0, 0, 0.75);
+}
+
+.enemy-sidebar {
+  border-left: 2px solid rgb(13, 223, 195);
+  box-shadow: -6px 0px 20px 7px rgba(0, 0, 0, 0.75);
+}
+
+.sidebar-header {
+  text-align: center;
+  font-size: 2.5vw;
+  color: white;
+  text-shadow: 0px 7px 5px rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+  width: 95%;
+  overflow: hidden;
+}
+
+.ship-stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1.2vw;
+}
+
+.ship-name {
+  font-size: 1vw;
+  color: white;
+  margin: 5px;
+}
+
+.Aircraft-Carrier {
+  width: 12.5vw;
+}
+
+.Battleship {
+  width: 11.5vw;
+}
+
+.Destroyer {
+  width: 11vw;
+}
+
+.Submarine {
+  width: 8.5vw;
+}
+
+.Boat {
+  width: 7.5vw;
+}
+
+.ship-health {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* ---------------------------------------------------- */
+.game-title {
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  color: white;
+  font-size: 3.2vw;
+  transform: translateX(-50%);
+  text-shadow: 0px 7px 5px rgba(0, 0, 0, 0.8);
+}
+
+.comments {
+  position: absolute;
+  bottom: 4.5vw;
+  color: white;
+  font-size: 1.1vw;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ---------------------------------------------------- */
+.ship-health {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.hit {
+  width: 0.65vw;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: rgb(230, 0, 0);
+  margin: 3px 10px;
+}
+
+.no-hit {
+  width: 0.65vw;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: white;
+  margin: 3px 10px;
+}
+
+.shot {
+  color: rgb(230, 0, 0);
+  font-size: 1.5vw;
+  border-color: rgb(230, 0, 0);
+  box-shadow: inset 0px 0px 12px 3px rgb(230, 0, 0);
+}
+
+.shot:hover {
+  box-shadow: inset 0px 0px 12px 3px rgb(230, 0, 0);
+}
+
+.missed-shot {
+  border-color: rgb(0, 153, 255);
+  box-shadow: inset 0px 0px 12px 3px rgb(0, 153, 255);
+}
+
+.missed-shot:hover {
+  box-shadow: inset 0px 0px 12px 3px rgb(0, 153, 255);
+}
+
+.explosion {
+  width: 1px;
+  height: 1px;
+  z-index: 3;
+  animation: explosion 1s ease-out forwards;
+}
+
+@keyframes explosion {
+  0% {
+    box-shadow: 0px 0px 0px 0px red;
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.65;
+  }
+
+  100% {
+    box-shadow: 0px 0px 120px 90px red;
+    opacity: 0;
+  }
+}
+
+.shake {
+  animation: shake 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+
+  10%,
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(0, 3px, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(0, -5px, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(0, 5px, 0);
+  }
+}
+
+.splash {
+  width: 2.56vw;
+  height: 2.56vw;
+  border: 2px solid steelblue;
+  box-shadow: 0px 0px 10px 5px rgb(0, 153, 255) inset;
+  opacity: 0;
+  position: absolute;
+  border-radius: 50%;
+  animation: ripple-animation 1.9s ease-out;
+}
+
+.splash-effect1 {
+  animation-delay: 0s;
+}
+
+.splash-effect2 {
+  animation-delay: 300ms;
+}
+
+@keyframes ripple-animation {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
