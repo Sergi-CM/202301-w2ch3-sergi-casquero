@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasapalabra DOOM Edition</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="style-main.css">
+</head>
+<body>
+
+    <section id="title-screen">
+        <div id="title">
+            <h1>Pasapalabra</h1>
+            <h2>DOOM Edition</h2>   
+        </div>
+        <p class="menu-item" id="start"> Start </p>;
+    </section>
+
+    <section>
+        <div id="menu-screen">
+            <h3 id="menu-title">Pasapalabra</h3>
+            <h4 id="menu-subtitle">Doom Edition</h4>
+        </div>
+
+        <div id="main-menu">
+            <p class="menu-item" id="new-game" onmousedown="playSound('menu-click')" onmouseover= "playSound('menu-hover')" onmouseout="resetSound('menu-hover')"> New Game </p>
+            <p class="menu-item" id="tutorial" onmousedown="playSound('menu-click')" onmouseover= "playSound('menu-hover')" onmouseout="resetSound('menu-hover')"> Tutorial </p>
+            <p class="menu-item" id="scoreboard" onmousedown="playSound('menu-click')" onmouseover= "playSound('menu-hover')" onmouseout="resetSound('menu-hover')"> Scoreboard </p>
+            <p class="menu-item" id="options" onmousedown="playSound('menu-click')" onmouseover= "playSound('menu-hover')" onmouseout="resetSound('menu-hover')"> Options </p>
+            <p class="menu-item" id="quit" onmousedown="playSound('menu-click')" onmouseover= "playSound('menu-hover')" onmouseout="resetSound('menu-hover')"> Quit Game </p>
+        </div>
+
+        <div id="scoreboard-section">
+            <table id="score-table-header">
+                <colgroup>
+                    <col class="fifty"/>
+                    <col class="twenty-five"/>
+                    <col class="twenty-five"/>
+                </colgroup>
+                <tr>
+                    <th>Player</th>
+                    <th>Correct</th>
+                    <th>Wrong</th>
+                </tr>
+            </table>
+            <div id="scoreboard-content">
+                <table id="score-table-content">
+                    <colgroup>
+                        <col class="fifty"/>
+                        <col class="twenty-five"/>
+                        <col class="twenty-five"/>
+                    </colgroup>
+                </table>
+            </div>
+            <p class="menu-item back" id="score-back" onmousedown="playSound('menu-click')" onmouseover= "playSound('menu-hover')" onmouseout="resetSound('menu-hover')"> Back </p>
+
+        </div>
+
+        <div id="options-menu">
+            <p class="menu-item" id="music-toggle" onmousedown="playSound('menu-click')" onmouseover= "playSound('menu-hover')" onmouseout="resetSound('menu-hover')"> Music: On </p>
+            <p class="menu-item" id="fx-toggle" onmousedown="playSound('menu-click')" onmouseover= "playSound('menu-hover')" onmouseout="resetSound('menu-hover')"> Sound FX: On </p>
+            <p class="menu-item back" id="opt-back" onmousedown="playSound('menu-click')" onmouseover= "playSound('menu-hover')" onmouseout="resetSound('menu-hover')"> Back </p>
+        </div>
+
+        <div id="quit-popup">
+            <p>Are you sure you wanna quit?</p>
+            <button id="quit-yes" onmousedown="playSound('menu-click')" onmouseover= "playSound('menu-hover')" onmouseout="resetSound('menu-hover')">Yes</button>
+            <button id="quit-no" onmousedown="playSound('menu-click')" onmouseover= "playSound('menu-hover')" onmouseout="resetSound('menu-hover')">No</button>
+        </div>
+
+        <div id="difficulty-menu">
+            <p class="menu-item" id="young" onmousedown="playSound('menu-click')" onmouseover= "playSound('menu-hover')" onmouseout="resetSound('menu-hover')"> I'm too young to die </p>
+            <p class="menu-item" id="rough" onmousedown="playSound('menu-click')" onmouseover= "playSound('menu-hover')" onmouseout="resetSound('menu-hover')"> Hey, not too rough </p>
+            <p class="menu-item" id="hurt" onmousedown="playSound('menu-click')" onmouseover= "playSound('menu-hover')" onmouseout="resetSound('menu-hover')"> Hurt me plenty </p>
+            <p class="menu-item" id="violence" onmousedown="playSound('menu-click')" onmouseover= "playSound('menu-hover')" onmouseout="resetSound('menu-hover')"> Ultra-Violence </p>
+            <p class="menu-item" id="nightmare" onmousedown="playSound('menu-click')" onmouseover= "playSound('menu-hover')" onmouseout="resetSound('menu-hover')"> Nightmare </p>
+            <p class="menu-item back" id="diff-back" onmousedown="playSound('menu-click')" onmouseover= "playSound('menu-hover')" onmouseout="resetSound('menu-hover')"> Back </p>
+        </div>   
+    </section>
+
+
+<div id="slideshow-container">
+
+  <div class="mySlides">
+    <img src="img/tuto1.png" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <img src="img/tuto2.png" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <img src="img/tuto3.png" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <img src="img/tuto4.png" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <img src="img/tuto5.png" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <img src="img/tuto6.png" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <img src="img/tuto7.png" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <img src="img/tuto8.png" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <img src="img/tuto9.png" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <img src="img/tuto10.png" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <img src="img/tuto11.png" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  <p class="menu-item back" id="tuto-back" onmousedown="playSound('menu-click')" onmouseover= "playSound('menu-hover')" onmouseout="resetSound('menu-hover')"> Back </p>
+
+</div>
+
+    <div id="black-overlay">
+        <div id="while-loading">
+            <img src="img/loader.gif" id="loader">
+            <p id="loading">Loading...</p>
+        </div>
+    </div>
+
+    <div class="welcome-popup" id="welcome">
+        <p>Welcome soldier!</p>
+        <p> What's your name?</p>
+        <input id="name-input" type="text" autofocus="autofocus" required>
+        <br>
+        <button type="submit" class="welcome-text" id="welcome-next" onmousedown="playSound('menu-click')" onmouseover= "playSound('menu-hover')" onmouseout="resetSound('menu-hover')">Next</button>
+    </div>
+
+    <div class="welcome-popup" id="greeting">
+        <p id="greeting-text"></p>
+        <button class="welcome-text" id="yeah" onmousedown="playSound('menu-click')" onmouseover= "playSound('menu-hover')" onmouseout="resetSound('menu-hover')"> Yeah!</button>
+    </div>
+
+    <section id="rosco-area">
+        <div id="rosco">
+                <div id="a" class="circle"> A </div>
+                <div id="b" class="circle"> B </div>
+                <div id="c" class="circle"> C </div>
+                <div id="d" class="circle"> D </div>
+                <div id="e" class="circle"> E </div>
+                <div id="f" class="circle"> F </div>
+                <div id="g" class="circle"> G </div>
+                <div id="h" class="circle"> H </div>
+                <div id="i" class="circle"> I </div>
+                <div id="j" class="circle"> J </div>
+                <div id="k" class="circle"> K </div>
+                <div id="l" class="circle"> L </div>
+                <div id="m" class="circle"> M </div>
+                <div id="n" class="circle"> N </div>
+                <div id="o" class="circle"> O </div>
+                <div id="p" class="circle"> P </div>
+                <div id="q" class="circle"> Q </div>
+                <div id="r" class="circle"> R </div>
+                <div id="s" class="circle"> S </div>
+                <div id="t" class="circle"> T </div>
+                <div id="u" class="circle"> U </div>
+                <div id="v" class="circle"> V </div>
+                <div id="w" class="circle"> W </div>
+                <div id="x" class="circle"> X </div>
+                <div id="y" class="circle"> Y </div>
+                <div id="z" class="circle"> Z </div>
+
+                <div id="answer-area">
+                    <p id="current-letter"></p> <br>
+                    <p id="question"></p> <br>
+                    <input id="user-answer" placeholder="Tu respuesta"> <br>
+                    <button id="answer-accept"> Aceptar </button>
+                    <button id="answer-pasa"> Pasapalabra </button>
+                    <button id="answer-quit"> Abandonar </button>
+                </div>
+        </div>
+    </section>
+
+    <section id="monster-area">
+        <div id="right-area">
+            <img id="monster1" src=""> 
+            <img id="shotgun" src="img/SHTGA0.png">           
+        </div>
+    </section>
+
+    <div id="time-up" class="welcome-popup">
+        <br> <p>Time's up!</p> <br>
+        <button id="time-up-next" class="welcome-text" onclick="viewResults()" onmousedown="playSound('menu-click')" onmouseover= "playSound('menu-hover')" onmouseout="resetSound('menu-hover')"> Next </button>
+    </div>
+
+    <div id="answer-quit-popup" class="welcome-popup">
+        <p>Run, you coward!</p> <br>
+        <button id="quit-next" class="welcome-text" onmousedown="playSound('menu-click')" onmouseover= "playSound('menu-hover')" onmouseout="resetSound('menu-hover')"> Next </button>
+    </div>
+
+    <div id="dead-popup" class="welcome-popup">
+        <br><p>You died!</p> <br>
+        <button id="dead-next" class="welcome-text" onmousedown="playSound('menu-click')" onmouseover= "playSound('menu-hover')" onmouseout="resetSound('menu-hover')"> Next </button>
+    </div>
+
+    <div id="win-popup" class="welcome-popup">
+        <br><p>You win!</p> <br>
+        <button id="win-next" class="welcome-text" onmousedown="playSound('menu-click')" onmouseover= "playSound('menu-hover')" onmouseout="resetSound('menu-hover')"> Hell Yeah! </button>
+    </div>
+
+    <section id="results-screen">
+        <h3 id="results-title" class="simple-text">Results</h3>
+        <div id="results-stats" class="simple-text">
+            <p>Correct answers</p>
+            <p>Wrong answers</p>
+            <p>Killed enemy</p>
+        </div>
+        <div id="results-numbers" class="simple-text">
+            <p id="results-correct"></p>
+            <p id="results-wrong"></p>
+            <p id="results-killed"></p>
+        </div>
+        <button class="welcome-text" id="results-next" onmousedown="playSound('menu-click')" onmouseover= "playSound('menu-hover')" onmouseout="resetSound('menu-hover')"> Next </button>
+    </section>
+
+<div id="stats-area">
+    <table>
+        <tr>
+            <td><div class="stat-container"><p class="stat" id="seconds"></p><br> <p class="stat-name">Time</p></div></td>
+            <td><div class="stat-container"><p class="stat" id="player-hp"></p><br> <p class="stat-name">Health</p></div></td>
+            <td><div class="stat-container"><img id="medikit" src="img/medikit.png"/> </div></td>                
+            <td id="face" class="square-shape"><div class="stat-container"><img id="doomguy" src="img/doomguy.jpg" /> </div></td>
+            <td><div class="stat-container"><p class="stat" id="correct"></p><br> <p class="stat-name">Correct</p></div></td>
+            <td><div class="stat-container"><p class="stat" id="wrong"></p><br> <p class="stat-name">Wrong</p></div></td>
+            <td><div class="stat-container controls">
+                <p>Enter: <span class="white-text">Confirm</span></p> <br>
+                <p>SpaceBar: <span class="white-text">Next</span></p> <br>
+                <p>Ctrl: <span class="white-text">Heal</span></p>
+            </div></td>
+        </tr>
+    </table>
+</div>
+
+<audio id="menu-music" src="sounds/theme.mp3"></audio>
+<audio id="menu-click" src="sounds/pistol.wav"></audio>
+<audio id="menu-hover" src="sounds/menuhover.wav"></audio>
+<audio id="game-music" src=""></audio>
+<audio id="load-shotgun" src="sounds/loadshotgun.wav"></audio>
+<audio id="shot" src="sounds/shotgun.wav"></audio>
+<audio id="player-hurt" src="sounds/hurt.wav"></audio>
+<audio id="heal" src="sounds/pickup.wav"></audio>
+<audio id="explosion" src="sounds/explosion.wav"></audio>
+<audio id="intermission" src="sounds/intermission.mp3"></audio>
+<audio id="death" src="sounds/death.wav"></audio>
+<audio id="death-sound-1" src="sounds/deathsound1.wav"></audio>
+<audio id="death-sound-2" src="sounds/deathsound2.wav"></audio>
+<audio id="death-sound-3" src="sounds/deathsound3.wav"></audio>
+<audio id="death-sound-4" src="sounds/deathsound4.wav"></audio>
+<audio id="death-sound-5" src="sounds/deathsound5.wav"></audio>
+<script type="text/javascript" src="script-menus.js"></script>
+
+</body>
+</html>
