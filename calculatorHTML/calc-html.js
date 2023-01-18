@@ -1,11 +1,10 @@
-//variables globales
+// Variables globales
 let n1;
 let n2;
 let op;
 let mostrandoResultado;
 
-
-//variables locales
+// Variables locales
 
 const resultado = document.getElementById("resultado");
 const operacion = document.getElementById("operacion");
@@ -29,169 +28,163 @@ const cero = document.getElementById("cero");
 
 resultado.textContent = "";
 
-
 const anadirNumero = (numero) => {
-debugger
-    if (mostrandoResultado) {
-        clearAll();
-        mostrandoResultado = false;
-    }
+  debugger;
+  if (mostrandoResultado) {
+    clearAll();
+    mostrandoResultado = false;
+  }
 
-    resultado.textContent = resultado.textContent + numero;
-}
-    
-document.addEventListener('keyup', (event) => {
-    event.preventDefault();
+  resultado.textContent += numero;
+};
 
-    switch (event.key) {
-        case 49:
-        case 97:
-            anadirNumero('1');
-    }
-})
+document.addEventListener("keyup", (event) => {
+  event.preventDefault();
 
-uno.addEventListener('click', () => anadirNumero('1'));
-dos.addEventListener('click', () => anadirNumero('2'));
-tres.addEventListener('click', () => anadirNumero('3'));
-cuatro.addEventListener('click', () => anadirNumero('4'));
-cinco.addEventListener('click', () => anadirNumero('5'));
-seis.addEventListener('click', () => anadirNumero('6'));
-siete.addEventListener('click', () => anadirNumero('7'));
-ocho.addEventListener('click', () => anadirNumero('8'));
-nueve.addEventListener('click', () => anadirNumero('9'));
+  switch (event.key) {
+    case 49:
+    case 97:
+      anadirNumero("1");
+  }
+});
 
-cero.addEventListener('click', () => {
-    if (resultado.textContent == "" || resultado.textContent != 0 || resultado.textContent.includes(".")) {
-        anadirNumero('0')
-    } 
-})
+uno.addEventListener("click", () => anadirNumero("1"));
+dos.addEventListener("click", () => anadirNumero("2"));
+tres.addEventListener("click", () => anadirNumero("3"));
+cuatro.addEventListener("click", () => anadirNumero("4"));
+cinco.addEventListener("click", () => anadirNumero("5"));
+seis.addEventListener("click", () => anadirNumero("6"));
+siete.addEventListener("click", () => anadirNumero("7"));
+ocho.addEventListener("click", () => anadirNumero("8"));
+nueve.addEventListener("click", () => anadirNumero("9"));
 
-coma.addEventListener('click', () => {
-    if (!resultado.textContent.includes(".")) {
-        anadirNumero('.')
-    }
-})
+cero.addEventListener("click", () => {
+  if (
+    resultado.textContent == "" ||
+    resultado.textContent != 0 ||
+    resultado.textContent.includes(".")
+  ) {
+    anadirNumero("0");
+  }
+});
 
-reset.onclick = function() {
-    clearAll(); 
-}
+coma.addEventListener("click", () => {
+  if (!resultado.textContent.includes(".")) {
+    anadirNumero(".");
+  }
+});
 
+reset.onclick = function () {
+  clearAll();
+};
 
 const operaciones = (operacionEnCurso) => {
+  if (!resultado.textContent) return;
 
-    if (!resultado.textContent) return
-    
-    if(!n1) {
-        n1 = resultado.textContent;
-        op = operacionEnCurso;
-        operacion.textContent = n1 + op;
-        
-    } else {
-        
-        n2 = resultado.textContent;
-
-        switch(op) {
-            case '+':
-                n1 = parseFloat(n1) + parseFloat(n2);
-                op = operacionEnCurso;
-                break
-            case '-':
-                n1 = parseFloat(n1) - parseFloat(n2);
-                op = operacionEnCurso;
-                break
-            case '*':
-                n1 = parseFloat(n1) * parseFloat(n2);
-                op = operacionEnCurso;
-                break
-            case '/':
-                n1 = parseFloat(n1) / parseFloat(n2);
-                op = operacionEnCurso;
-                break
-        }
-        operacion.textContent = n1 + op
-    }
-    
-    empty();
-    mostrandoResultado = false;
-
-}
-
-
-suma.addEventListener('click', () => operaciones('+'));
-resta.addEventListener('click', () => operaciones('-'));
-multiplicacion.addEventListener('click', () => operaciones('*'));
-division.addEventListener('click', () => operaciones('/'));
-
-raiz.addEventListener('click', () => {
+  if (!n1) {
     n1 = resultado.textContent;
-    op = "√";
-    solveSqrt();
-})
-
-igual.addEventListener('click', () => {
+    op = operacionEnCurso;
+    operacion.textContent = n1 + op;
+  } else {
     n2 = resultado.textContent;
-    solve();
-})
 
+    switch (op) {
+      case "+":
+        n1 = parseFloat(n1) + parseFloat(n2);
+        op = operacionEnCurso;
+        break;
+      case "-":
+        n1 = parseFloat(n1) - parseFloat(n2);
+        op = operacionEnCurso;
+        break;
+      case "*":
+        n1 = parseFloat(n1) * parseFloat(n2);
+        op = operacionEnCurso;
+        break;
+      case "/":
+        n1 = parseFloat(n1) / parseFloat(n2);
+        op = operacionEnCurso;
+        break;
+    }
 
+    operacion.textContent = n1 + op;
+  }
 
-//Funciones especiales
+  empty();
+  mostrandoResultado = false;
+};
+
+suma.addEventListener("click", () => operaciones("+"));
+resta.addEventListener("click", () => operaciones("-"));
+multiplicacion.addEventListener("click", () => operaciones("*"));
+division.addEventListener("click", () => operaciones("/"));
+
+raiz.addEventListener("click", () => {
+  n1 = resultado.textContent;
+  op = "√";
+  solveSqrt();
+});
+
+igual.addEventListener("click", () => {
+  n2 = resultado.textContent;
+  solve();
+});
+
+// Funciones especiales
 
 const empty = () => {
-    resultado.textContent = "";
-}
+  resultado.textContent = "";
+};
 
 const clearAll = () => {
-    resultado.textContent = "";
-    operacion.textContent = "";
-    n1 = 0;
-    n2 = 0;
-    op = "";
-}
+  resultado.textContent = "";
+  operacion.textContent = "";
+  n1 = 0;
+  n2 = 0;
+  op = "";
+};
 
 const clear = () => {
-    resultado.textContent = "";
-    n1 = 0;
-    n2 = 0;
-    op = "";
-}
+  resultado.textContent = "";
+  n1 = 0;
+  n2 = 0;
+  op = "";
+};
 
 const solveSqrt = () => {
-    resultado.textContent = Math.sqrt(n1).toFixed(3)
-    operacion.textContent = op + n1;
-    mostrandoResultado = true;
-}
+  resultado.textContent = Math.sqrt(n1).toFixed(3);
+  operacion.textContent = op + n1;
+  mostrandoResultado = true;
+};
 
 const solve = () => {
-    
-    if (mostrandoResultado) return
-    
-    let lastResult;
-    
-    switch(op) {
-        case "+":
-            operacion.textContent = n1 + "+" + n2;
-            lastResult = parseFloat(n1) + parseFloat(n2);
-            break;
+  if (mostrandoResultado) return;
 
-        case "-":
-            operacion.textContent = n1 + "-" + n2;
-            lastResult = parseFloat(n1) - parseFloat(n2);
-            break;
-        
-        case "*":
-            operacion.textContent = n1 + "×" + n2;
-            lastResult = parseFloat(n1) * parseFloat(n2);
-            break;
-        case "/":
-            operacion.textContent = n1 + "÷" + n2;
-            lastResult = parseFloat(n1) / parseFloat(n2);
-            break;
-    }
+  let lastResult;
 
-    n1 = '';
-    clear();
-    mostrandoResultado = true;
-    resultado.textContent = lastResult;
+  switch (op) {
+    case "+":
+      operacion.textContent = n1 + "+" + n2;
+      lastResult = parseFloat(n1) + parseFloat(n2);
+      break;
 
-}
+    case "-":
+      operacion.textContent = n1 + "-" + n2;
+      lastResult = parseFloat(n1) - parseFloat(n2);
+      break;
+
+    case "*":
+      operacion.textContent = n1 + "×" + n2;
+      lastResult = parseFloat(n1) * parseFloat(n2);
+      break;
+    case "/":
+      operacion.textContent = n1 + "÷" + n2;
+      lastResult = parseFloat(n1) / parseFloat(n2);
+      break;
+  }
+
+  n1 = "";
+  clear();
+  mostrandoResultado = true;
+  resultado.textContent = lastResult;
+};
